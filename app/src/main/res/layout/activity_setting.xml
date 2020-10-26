@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+
+    <ImageView
+        android:id="@+id/imgTopOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/top_overlay"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:textSize="@dimen/_25sdp"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="@font/long_fox"
+        android:text="@string/setting"/>
+
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:src="@drawable/back"
+        android:contentDescription="@string/todo" />
+
+    <ImageView
+        android:id="@+id/imgDone"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:src="@drawable/check"
+        android:contentDescription="@string/todo" />
+
+    <ScrollView
+        android:layout_below="@id/imgTopOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTime"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.gcssloop.widget.ArcSeekBar
+                    android:id="@+id/seekBar"
+                    app:arc_max="60"
+                    app:arc_open_angle="90"
+                    app:arc_progress="0"
+                    app:arc_rotate_angle="90"
+                    app:arc_thumb_color="#fff"
+                    app:arc_thumb_mode="STROKE"
+                    app:arc_thumb_radius="16dp"
+                    app:arc_thumb_width="3dp"
+                    app:arc_thumb_shadow_radius="3dp"
+                    app:arc_thumb_shadow_color="#000000"
+                    app:arc_width="40dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    app:arc_colors="@array/arc_colors_default"/>
+
+                <TextView
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_100sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/long_fox"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/waiting_time"/>
+
+                <TextView
+                    android:id="@+id/waitingTime"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_120sdp"
+                    android:textSize="@dimen/_25sdp"
+                    android:fontFamily="@font/long_fox"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_00"/>
+
+                <TextView
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_145sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/long_fox"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mins"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTwo"
+                android:layout_below="@+id/cardTime"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_alignParentStart="true"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/falling_sky"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_18sdp"
+                        android:textColor="@color/colorBlack"
+                        android:text="@string/watch_alert"/>
+
+                    <Switch
+                        android:id="@+id/switchAlert"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardThree"
+                android:layout_below="@+id/cardTwo"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_alignParentStart="true"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/falling_sky"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_18sdp"
+                        android:text="@string/watch_notification_sound"/>
+
+                    <Switch
+                        android:id="@+id/switchSound"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_below="@+id/cardThree"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_alignParentStart="true"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/falling_sky"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_18sdp"
+                        android:text="@string/watch_vibration"/>
+
+                    <Switch
+                        android:id="@+id/switchVibration"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

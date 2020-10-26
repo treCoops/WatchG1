@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#019355</color>
+    <color name="colorAccent">#03BF6F</color>
+
+    <color name="colorTheme">#03BF6F</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGray">#616161</color>
+
+    <color name="AlertRed">#E44848</color>
+    <color name="AlertGreen">#65E448</color>
+    <color name="AlertBlue">#2A3EBD</color>
+    <color name="AlertYellow">#FFEB3B</color>
+    <color name="AlertGray">#8C8C89</color>
+</resources>
