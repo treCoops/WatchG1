@@ -6,7 +6,7 @@
     <string name="setting">Setting</string>
     <string name="waiting_time">Waiting Time</string>
     <string name="_00">00</string>
-    <string name="mins">mins</string>
+    <string name="secs">secs</string>
     <string name="todo">TODO</string>
     <string name="watch_alert">Watch Alert</string>
     <string name="watch_notification_sound">Watch Notification Sound</string>

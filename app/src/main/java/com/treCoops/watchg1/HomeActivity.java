@@ -104,8 +104,11 @@ public class HomeActivity extends AppCompatActivity {
                 Double val = 0.0;
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    val = ((snapshot.getValue(Double.class).doubleValue()/1000)/3600);
-                    ColumnData.add((double) Math.round(val*10)/10.0);
+//                    Log.e("Time", convertSeconds(snapshot.getValue(Integer.class)));
+//                    val = (snapshot.getValue(Double.class).doubleValue()/3600);
+//                    val = convertSeconds(snapshot.getValue(Double.class));
+//                    ColumnData.add((double) Math.round(val*10)/10.0);
+                    ColumnData.add(Double.parseDouble(convertSeconds(snapshot.getValue(Integer.class))));
                     series1.add(snapshot.getKey());
 
                 }
@@ -168,5 +171,16 @@ public class HomeActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public static String convertSeconds(int seconds) {
+        int h = seconds/ 3600;
+        int m = (seconds % 3600) / 60;
+        int s = seconds % 60;
+        String sh = (h > 0 ? String.valueOf(h) + "." + "" : "0");
+        String sm = (m < 10 && m > 0 && h > 0 ? "0" : "") + (m > 0 ? (h > 0 && s == 0 ? String.valueOf(m) : String.valueOf(m) + "" + "") : "00");
+//        String ss = (s == 0 && (h > 0 || m > 0) ? "" : (s < 10 && (h > 0 || m > 0) ? "0" : "") + String.valueOf(s) + " " + "sec");
+//        return sh + (h > 0 ? " " : "") + sm + (m > 0 ? " " : "") + ss;
+        return sh + (h > 0 ? "" : ".") + sm + (m > 0 ? "" : "");
     }
 }
